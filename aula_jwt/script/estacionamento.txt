@@ -1,0 +1,46 @@
+CREATE DATABASE IF NOT EXISTS estacionamento;
+USE estacionamento;
+
+-- Criando Tabela de usuários (apenas admin)
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Criando Usuário admin padrão
+-- senha: 1234 (MD5 apenas como placeholder; no JWT usaremos senha hash )
+INSERT INTO usuarios (nome, email, senha) VALUES ('Administrador', 'admin@admin.com', MD5('1234'));
+
+-- Criando Tabela clientes
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    inativo TINYINT(1) DEFAULT 0,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Criando Tabela veículos
+CREATE TABLE veiculos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    placa VARCHAR(10) NOT NULL UNIQUE,
+    modelo VARCHAR(50),
+    cor VARCHAR(30),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+-- Criando Tabela de registros de estacionamento
+CREATE TABLE registros_estacionamento (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_veiculo INT NOT NULL,
+    hora_entrada DATETIME NOT NULL,
+    hora_saida DATETIME DEFAULT NULL,
+    status ENUM('aberto','fechado') DEFAULT 'aberto',
+    tempo_total_minutos INT DEFAULT NULL,
+    valor_pago DECIMAL(10,2) DEFAULT NULL,
+    FOREIGN KEY (id_veiculo) REFERENCES veiculos(id)
+);
