@@ -1,0 +1,528 @@
+type: collection.insomnia.rest/5.0
+name: SOAP2
+meta:
+  id: wrk_42fd8f186ae0485cbb51659804fe18dc
+  created: 1760990913092
+  modified: 1760990913092
+  description: ""
+collection:
+  - name: Login
+    meta:
+      id: fld_d310d003b11d47a0aeadf57e33ec6af0
+      created: 1760990930908
+      modified: 1760990930908
+      sortKey: -1760990930908
+      description: ""
+    children:
+      - url: http://localhost/aula_jwt/api-soa/login
+        name: Login
+        meta:
+          id: req_68983001d8f84a33a1b7400da9a1c44b
+          created: 1760990933242
+          modified: 1760991488974
+          isPrivate: false
+          description: ""
+          sortKey: -1760990938755
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "email": "admin@admin.com",
+                "senha": "1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.4.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Clientes
+    meta:
+      id: fld_d3c4380ae92149b48fc3ec5566d00564
+      created: 1760991265137
+      modified: 1760991265137
+      sortKey: -1760991265137
+      description: ""
+    children:
+      - url: http://localhost/aula_jwt/api-soa/clientes/findAll
+        name: FindAll
+        meta:
+          id: req_22fbceca5a65482884b8feb85500f79b
+          created: 1760991313812
+          modified: 1761000304458
+          isPrivate: false
+          description: ""
+          sortKey: -1760991317166
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/clientes/add
+        name: Add
+        meta:
+          id: req_81462c0ac1964d33bf8b264b6300731f
+          created: 1760991918153
+          modified: 1761001458226
+          isPrivate: false
+          description: ""
+          sortKey: -1760991317241
+        method: POST
+        body:
+          mimeType: application/xml
+          text: '{"nome": "Jennyfer"}'
+        headers:
+          - name: Content-Type
+            value: application/xml
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/clientes/edit/2
+        name: Edit
+        meta:
+          id: req_9a7f9b5b7dcb48a3b4a0c4f73e3fbcd7
+          created: 1760991924754
+          modified: 1760992280640
+          isPrivate: false
+          description: ""
+          sortKey: -1760991317191
+        method: PUT
+        body:
+          mimeType: application/json
+          text: '{"nome": "Pamela EDITADO"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYwOTkxNDc3LCJleHAiOjE3NjA5OTUwNzd9.pkJV3ZkqOoLgd8B0jo_FCHhmmeSroMbhxRXjXZaVR4Q
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/clientes/ativos
+        name: FindAtivos
+        meta:
+          id: req_04f771af40f14664b9d4aa530199a7de
+          created: 1760998455886
+          modified: 1761000314934
+          isPrivate: false
+          description: ""
+          sortKey: -1760991304507.25
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/clientes/find/6
+        name: FindById
+        meta:
+          id: req_62b1d84934eb46cbab15030fbda05f9f
+          created: 1760998525876
+          modified: 1761000338736
+          isPrivate: false
+          description: ""
+          sortKey: -1760991298177.875
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/clientes/inativo/1
+        name: MarcarInativo
+        meta:
+          id: req_f3b1fc17e65b4c0eb45af2da2c79f947
+          created: 1760998571160
+          modified: 1761000327487
+          isPrivate: false
+          description: ""
+          sortKey: -1760991301342.5625
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/clientes/delete/2
+        name: DELETE
+        meta:
+          id: req_a20eec1811bd48f3a31ffe6bbd84a365
+          created: 1760998610531
+          modified: 1760998681291
+          isPrivate: false
+          description: ""
+          sortKey: -1760991299760.2188
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYwOTk4NDczLCJleHAiOjE3NjEwMDIwNzN9.NYmC4bg4hKgr5f9ezWZToFKyVRehCAS8UItfTaNfoSM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Veículos
+    meta:
+      id: fld_55a44b44ab3c4fab8b908b3407c6211c
+      created: 1760991286292
+      modified: 1760991286292
+      sortKey: -1760991286292
+      description: ""
+    children:
+      - url: http://localhost/aula_jwt/api-soa/veiculos/edit/1
+        name: Edit
+        meta:
+          id: req_2f0a6ac429dc4ee28b05f71ccbbba475
+          created: 1760991329781
+          modified: 1760998949265
+          isPrivate: false
+          description: ""
+          sortKey: -1760998938579.25
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "id_cliente": 1,
+              "placa": "ABC9999",
+              "modelo": "Fiat Palio EDITADO",
+              "cor": "Azul"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYwOTkxNDc3LCJleHAiOjE3NjA5OTUwNzd9.pkJV3ZkqOoLgd8B0jo_FCHhmmeSroMbhxRXjXZaVR4Q
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/veiculos/findAll
+        name: FindAll
+        meta:
+          id: req_962d8982d57b4c8f935eb64ee16fc1b5
+          created: 1760991931449
+          modified: 1761000533265
+          isPrivate: false
+          description: ""
+          sortKey: -1760998938598
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/veiculos/add
+        name: Add
+        meta:
+          id: req_99deed0af37045a3bc6bb4c63fcee0b7
+          created: 1760992935133
+          modified: 1761000516384
+          isPrivate: false
+          description: ""
+          sortKey: -1760998938573
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"id_cliente": 3, "placa": "ABC0264", "modelo": " Volkswagen T-Cross",
+            "cor": "Preto"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/veiculos/find/3
+        name: FindById
+        meta:
+          id: req_e316117248374221a6ffca48b10f7be3
+          created: 1760998793264
+          modified: 1761000552420
+          isPrivate: false
+          description: ""
+          sortKey: -1760998938648
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/veiculos/cliente/1
+        name: FindByCliente
+        meta:
+          id: req_e32a02c46b31437d95c364c1f72b7681
+          created: 1760998823770
+          modified: 1760998948044
+          isPrivate: false
+          description: ""
+          sortKey: -1760998938585.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYwOTkxNDc3LCJleHAiOjE3NjA5OTUwNzd9.pkJV3ZkqOoLgd8B0jo_FCHhmmeSroMbhxRXjXZaVR4Q
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/aula_jwt/api-soa/veiculos/delete/1
+        name: DELETE
+        meta:
+          id: req_52d471fe028e4c25844be6bb1f4041e8
+          created: 1760998885549
+          modified: 1760998938581
+          isPrivate: false
+          description: ""
+          sortKey: -1760998938548
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYwOTkxNDc3LCJleHAiOjE3NjA5OTUwNzd9.pkJV3ZkqOoLgd8B0jo_FCHhmmeSroMbhxRXjXZaVR4Q
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Estacionamento
+    meta:
+      id: fld_a9a9497f59c1438d92cf40d664685b1e
+      created: 1760991297405
+      modified: 1760991297405
+      sortKey: -1760991297405
+      description: ""
+  - url: http://localhost/aula_jwt/api-soa/estacionamento/entrada/5
+    name: Entrada
+    meta:
+      id: req_6544d8b2444145878893cc904092fbb5
+      created: 1760991322522
+      modified: 1761001130230
+      isPrivate: false
+      description: ""
+      sortKey: -1760991289070.25
+    method: POST
+    body:
+      mimeType: application/xml
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/xml
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost/aula_jwt/api-soa//estacionamento/historico
+    name: Historico
+    meta:
+      id: req_24d43a275d44474b94af00e9fc34e44e
+      created: 1760992928217
+      modified: 1761000769686
+      isPrivate: false
+      description: ""
+      sortKey: -1760991291848.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost/aula_jwt/api-soa/estacionamento/saida/1
+    name: Saida
+    meta:
+      id: req_1a26b55af319461188fd9c66cce8af12
+      created: 1760996561233
+      modified: 1761001159064
+      isPrivate: false
+      description: ""
+      sortKey: -1760991288375.6875
+    method: POST
+    body:
+      mimeType: application/xml
+      text: '{"id_cliente": 1, "placa": "ABC1234", "modelo": "Fiat Uno", "cor":
+        "Vermelho"}'
+    headers:
+      - name: Content-Type
+        value: application/xml
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost/aula_jwt/api-soa/estacionamento/ativos
+    name: Ativos
+    meta:
+      id: req_df3d940568f94073a7e1c213214a9da2
+      created: 1760999493835
+      modified: 1761000776227
+      isPrivate: false
+      description: ""
+      sortKey: -1760991290459.375
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ1c3VhcmlvIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzYxMDAwMjI2LCJleHAiOjE3NjEwMDM4MjZ9.9fmkyLIkpbi98K6kxMO8wsrwwasZYHNKhQe_1n0LKHc
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_90116610e382c3cec379fda7c961539a9da94279
+    created: 1760990913105
+    modified: 1760990913105
+environments:
+  name: Base Environment
+  meta:
+    id: env_90116610e382c3cec379fda7c961539a9da94279
+    created: 1760990913101
+    modified: 1760990913101
+    isPrivate: false
